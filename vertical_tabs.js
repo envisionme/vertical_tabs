@@ -1,3 +1,5 @@
+// $Id$
+
 Drupal.verticalTabs = Drupal.verticalTabs || {};
 
 Drupal.behaviors.verticalTabs = function() {

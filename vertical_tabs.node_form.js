@@ -1,3 +1,6 @@
+// $Id$
+
+Drupal.verticalTabs = Drupal.verticalTabs || {};
 
 Drupal.verticalTabs.book = function() {
   var text = $('#edit-book-bid option[selected]').text();
