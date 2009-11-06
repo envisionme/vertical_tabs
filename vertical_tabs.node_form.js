@@ -14,12 +14,16 @@ Drupal.verticalTabs.book = function() {
 }
 
 Drupal.verticalTabs.revision_information = function() {
-  var val = $('#edit-revision').attr('checked');
-  if (val) {
-    return Drupal.t('Create new revision');
+  if ($('#edit-revision').length) {
+    if ($('#edit-revision').attr('checked')) {
+      return Drupal.t('Create new revision');
+    }
+    else {
+      return Drupal.t('Don\'t create new revision');
+    }
   }
   else {
-    return Drupal.t('Don\'t create new revision');
+    return '';
   }
 }
 
