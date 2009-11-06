@@ -49,7 +49,7 @@ Drupal.behaviors.verticalTabs = function() {
       $('.vertical-tabs-' + k).remove();
     });
 
-    $('div.vertical-tabs').html(ul).append(panes);
+    $('div.vertical-tabs').html(ul).append(panes).show();
 
     // Activate the first tab.
     $('fieldset.vertical-tabs-pane').hide();
