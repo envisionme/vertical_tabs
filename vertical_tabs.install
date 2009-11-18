@@ -18,7 +18,7 @@ function vertical_tabs_install() {
 }
 
 /**
- * Implementation of hook_install().
+ * Implementation of hook_uninstall().
  */
 function vertical_tabs_uninstall() {
   $node_types = array_keys(node_get_types('names'));
