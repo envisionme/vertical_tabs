@@ -66,3 +66,14 @@ Drupal.behaviors.verticalTabsReload = function() {
     }
   });
 }
+
+Drupal.behaviors.verticalTabsSettings = function(context) {
+  $('input#edit-vertical-tabs-fieldsets-vertical-tabs-all', context).click(function () {
+    var checked = $(this).attr('checked');
+    $('fieldset.vertical-tabs-vertical_tabs_settings input:not(#edit-vertical-tabs-fieldsets-vertical-tabs-all):checkbox').attr('checked', checked).attr('disabled', checked);
+  });
+  $(document).ready(function () {
+    var checked = $('input#edit-vertical-tabs-fieldsets-vertical-tabs-all').attr('checked');
+    $('fieldset.vertical-tabs-vertical_tabs_settings input:not(#edit-vertical-tabs-fieldsets-vertical-tabs-all):checkbox').attr('checked', checked).attr('disabled', checked);
+  });
+}
