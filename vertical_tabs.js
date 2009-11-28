@@ -49,13 +49,14 @@ Drupal.behaviors.verticalTabs = function() {
       $('.vertical-tabs-' + k).remove();
     });
 
-    $('div.vertical-tabs').html(ul).append(panes).show();
+    $('div.vertical-tabs').html(ul).append(panes);
 
     // Activate the first tab.
     $('fieldset.vertical-tabs-pane').hide();
     $('fieldset.vertical-tabs-pane:first').show();
     $('div.vertical-tabs ul li:first').addClass('first selected');
     $('div.vertical-tabs ul li:last').addClass('last');
+    $('div.vertical-tabs').show();
   }
 }
 
@@ -64,16 +65,5 @@ Drupal.behaviors.verticalTabsReload = function() {
     if (v.callback && Drupal.verticalTabs[v.callback]) {
       $('a.vertical-tabs-list-' + k + ' span.summary').html(Drupal.verticalTabs[v.callback].apply(this, v.args));
     }
-  });
-}
-
-Drupal.behaviors.verticalTabsSettings = function(context) {
-  $('input#edit-vertical-tabs-fieldsets-vertical-tabs-all', context).click(function () {
-    var checked = $(this).attr('checked');
-    $('fieldset.vertical-tabs-vertical_tabs_settings input:not(#edit-vertical-tabs-fieldsets-vertical-tabs-all):checkbox').attr('checked', checked).attr('disabled', checked);
-  });
-  $(document).ready(function () {
-    var checked = $('input#edit-vertical-tabs-fieldsets-vertical-tabs-all').attr('checked');
-    $('fieldset.vertical-tabs-vertical_tabs_settings input:not(#edit-vertical-tabs-fieldsets-vertical-tabs-all):checkbox').attr('checked', checked).attr('disabled', checked);
   });
 }
