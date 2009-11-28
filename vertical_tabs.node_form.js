@@ -28,12 +28,12 @@ Drupal.verticalTabs.revision_information = function() {
 }
 
 Drupal.verticalTabs.author = function() {
-  var name = $('#edit-name').val(), date = $('#edit-date').val();
+  var author = $('#edit-name').val() || Drupal.t('Anonymous'), date = $('#edit-date').val();
   if (date) {
-    return Drupal.t('By @name on @date', { '@name': name, '@date': date });
+    return Drupal.t('By @name on @date', { '@name': author, '@date': date });
   }
   else {
-    return Drupal.t('By @name', { '@name': name });
+    return Drupal.t('By @name', { '@name': author });
   }
 }
 
