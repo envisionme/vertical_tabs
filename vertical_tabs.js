@@ -1,9 +1,10 @@
 // $Id$
 
 Drupal.verticalTabs = Drupal.verticalTabs || {};
+Drupal.settings.verticalTabs = Drupal.settings.verticalTabs || {};
 
 Drupal.behaviors.verticalTabs = function() {
-  if (!$('.vertical-tabs-list').size()) {
+  if (!$('.vertical-tabs-list').size() && Drupal.settings.verticalTabs) {
     var ul = $('<ul class="vertical-tabs-list"></ul>');
     var panes = $('<div class="vertical-tabs-panes"></div>');
     $.each(Drupal.settings.verticalTabs, function(k, v) {
