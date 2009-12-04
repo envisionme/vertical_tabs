@@ -2,7 +2,6 @@
 
 Drupal.verticalTabs = Drupal.verticalTabs || {};
 
-
 Drupal.verticalTabs.comment = function() {
   var vals = [];
   vals.push($(".vertical-tabs-comment input[name='comment']:checked").parent().text());
