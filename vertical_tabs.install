@@ -27,6 +27,8 @@ function vertical_tabs_enable() {
  */
 function vertical_tabs_uninstall() {
   variable_del('vertical_tabs_forms');
+  variable_del('vertical_tabs_default');
+  variable_del('vertical_tabs_minimum');
 }
 
 /**

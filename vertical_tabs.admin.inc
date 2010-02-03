@@ -5,7 +5,14 @@ function vertical_tabs_settings_form() {
   $form['vertical_tabs_default'] = array(
     '#type' => 'checkbox',
     '#title' => t('Include new fieldsets in vertical tabs by default.'),
-    '#default_value' => variable_get('vertical_tabs_default', 0),
+    '#default_value' => variable_get('vertical_tabs_default', 1),
+  );
+  $form['vertical_tabs_minimum'] = array(
+    '#type' => 'select',
+    '#title' => t('Minimum number of tabified fieldsets to show vertical tabs'),
+    '#description' => t('Non-tabified fieldsets do not count towards this minimum.'),
+    '#options' => array(1 => t('No minimum')) + drupal_map_assoc(range(2, 10)),
+    '#default_value' => variable_get('vertical_tabs_minimum', 1),
   );
   $form['vertical_tabs_node_type_settings'] = array(
     '#type' => 'checkbox',
