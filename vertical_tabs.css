@@ -67,3 +67,9 @@ div.vertical-tabs ul.vertical-tabs ul.vertical-tabs-list .summary {
   line-height: normal;
   margin-bottom: 0;
 }
+
+/* Back-port only additions. */
+div.vertical-tabs ul.vertical-tabs-list li.error {
+  border:1px solid #DD7777 !important;
+  background: #FFCCCC !important;
+}

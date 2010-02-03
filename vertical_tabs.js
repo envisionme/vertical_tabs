@@ -52,6 +52,13 @@ Drupal.behaviors.verticalTabs = function() {
 
     $('div.vertical-tabs').html(ul).append(panes);
 
+    // Add an error class to any fieldsets with errors in them.
+    $('fieldset.vertical-tabs-pane').each(function(i){
+      if ($(this).find('div.form-item .error').size()) {
+        $('li.vertical-tab-button').eq(i).addClass('error');
+      }
+    })
+
     // Activate the first tab.
     $('fieldset.vertical-tabs-pane').hide();
     $('fieldset.vertical-tabs-pane:first').show();
