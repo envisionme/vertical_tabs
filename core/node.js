@@ -29,20 +29,11 @@ Drupal.verticalTabs.author = function() {
 
 Drupal.verticalTabs.options = function() {
   var vals = [];
-  if ($('#edit-status').attr('checked')) {
-    vals.push(Drupal.t('Published'));
-  }
-  else {
-    vals.push(Drupal.t('Not published'));
-  }
-  if ($('#edit-promote').attr('checked')) {
-    vals.push(Drupal.t('Promoted to front page'));
-  }
-  if ($('#edit-sticky').attr('checked')) {
-    vals.push(Drupal.t('Sticky on top of lists'));
-  }
-  if (vals.join(', ') == '') {
-    return Drupal.t('None');
+  $('fieldset.vertical-tabs-options input:checked').parent().each(function () {
+    vals.push(Drupal.checkPlain($.trim($(this).text())));
+  });
+  if (!$('#edit-status').is(':checked')) {
+    vals.unshift(Drupal.t('Not published'));
   }
   return vals.join(', ');
 }
