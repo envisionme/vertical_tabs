@@ -15,7 +15,8 @@ Drupal.verticalTabs.taxonomy = function() {
       }
       else if ($(this).is('select')) {
         $(this).find('option[selected]').each(function() {
-          terms[vocabulary].push($(this).text());
+          var term = $(this).text().replace(/^\-+/, '');
+          terms[vocabulary].push(term);
           termCount++;
         });
       }
