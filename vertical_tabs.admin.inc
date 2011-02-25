@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 function vertical_tabs_settings_form() {
   $form['vertical_tabs_default'] = array(
