@@ -36,11 +36,6 @@ function vertical_tabs_add_node_type_options(&$form, $node_type) {
   // Build a sample node form to find fieldsets.
   $node_form_state = array('values' => array());
   $node_form_id = $node_type .'_node_form';
-  $args = array(
-    $node_form_id,
-    $node_form_state,
-    $node
-  );
   $node_form = drupal_retrieve_form($node_form_id, $node_form_state, $node);
   $node_form['#post'] = $node_form_state['values'];
   drupal_prepare_form($node_form_id, $node_form, $node_form_state);
