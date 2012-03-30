@@ -58,11 +58,23 @@ Drupal.behaviors.verticalTabs = function() {
       }
     })
 
-    // Activate the first tab.
+    // Hide the vertical tabs and apply classes.
     $('fieldset.vertical-tabs-pane').hide();
-    $('fieldset.vertical-tabs-pane:first').show();
-    $('div.vertical-tabs ul li:first').addClass('first selected');
+    $('div.vertical-tabs ul li:first').addClass('first');
     $('div.vertical-tabs ul li:last').addClass('last');
+
+    // Active the selected tab via URL fragment or the first tab by default.
+    var fragment = window.location.hash.substr(1);
+    if (fragment && $('div.vertical-tabs div.vertical-tabs-panes .vertical-tabs-' + fragment).size()) {
+      $('div.vertical-tabs ul li a.vertical-tabs-list-' + fragment).parent().addClass('selected');
+      $('div.vertical-tabs div.vertical-tabs-panes .vertical-tabs-' + fragment).show();
+    }
+    else {
+      $('fieldset.vertical-tabs-pane:first').show();
+      $('div.vertical-tabs ul li:first').addClass('selected');
+    }
+
+	//Show vertical tabs
     $('div.vertical-tabs').show();
   }
 }
